@@ -1,9 +1,8 @@
-import { API } from "../core";
+import { API } from "../config";
 
 export const getVideogames = () => {
-  return (fetch(`${API}/videogame/videogames`),
-  {
-    method: GET,
+  return fetch(`${API}/videogame/videogames`, {
+    method: "GET",
   })
     .then((response) => {
       console.log(response);

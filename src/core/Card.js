@@ -7,11 +7,12 @@ const Card = ({ videogame }) => {
 
   return (
     <div className="card m-10 card-cont">
-      <div>
+      <div className="">
         <ShowImage className="img" item={videogame} url="videogame" />
         <h2>{videogame.name}</h2>
-        <p>{videogame.price}</p>
+        <p> € {videogame.price}</p>
         <p>{videogame.description}</p>
+        <button className="btn btn-success"> More info </button>
       </div>
     </div>
   );
