@@ -41,15 +41,6 @@ const Signin = () => {
   const signInForm = () => (
     <form className="sign-box">
       <div className="form-group">
-        <label className="text-muted">Name</label>
-        <input
-          onChange={handleChange("name")}
-          value={name}
-          type="text"
-          className="form-control"
-        />
-      </div>
-      <div className="form-group">
         <label className="text-muted">email</label>
         <input
           onChange={handleChange("email")}
@@ -86,11 +77,29 @@ const Signin = () => {
     }
   };
 
+  const showError = () => (
+    <div
+      className="alert alert-danget"
+      style={{ display: error ? "" : "none" }}
+    >
+      {error}
+    </div>
+  );
+
+  const showLoading = () =>
+    loading && (
+      <div className="alert alert-info">
+        <h2> Now loading...</h2>
+      </div>
+    );
+
   return (
     <>
       <Navigation />
       <div className="mt-5">
         <h4 className="text-center mb-5"> Log In</h4>
+        {showError()}
+        {showLoading()}
         {signInForm()}
         {redirectUser()}
       </div>
