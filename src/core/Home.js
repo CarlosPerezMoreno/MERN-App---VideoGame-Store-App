@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getVideogames } from "./apiCore";
-import Navbar from "../layout/Navbar";
+import Navigation from "../layout/Navigation";
 import Card from "./Card";
+import Header from "../layout/Header";
+
+import "./home.css";
 
 const Home = () => {
   const [videogames, setVideogames] = useState([]);
@@ -24,7 +27,8 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navigation />
+      <Header />
       <div className="container">
         <div className="row">
           {videogames.map((videogame, index) => (
